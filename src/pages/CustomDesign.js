@@ -7,32 +7,34 @@ class App extends Component {
   constructor() {
     super();
 
+    this._initializeData();
+
     this.state = {
       width: '200px',
       height: '200px',
-      template: [<img src="http://lorempixel.com/50/50" classID="0" draggable='false'/>,
-        <img src="http://lorempixel.com/50/50" classID="0" draggable='false'/>],
+      template: [<img src="http://lorempixel.com/50/50"/>],
     };
   }
 
+  componentDidMount() {
+    $(".resizable").resizable();
+  }
 
   render() {
     return (
       <div style={{background: 'red', width: 961, margin: '0 auto'}}>
         <div className="container">
-
-          <ResizableBox width={200} height={200} lockAspectRatio
-                        minConstraints={[100, 100]} maxConstraints={[300, 300]}
-                        onResizeStop={(ev) => this._handleResize(ev)}
-          >
-            <img src="http://lorempixel.com/200/200" style={{width: this.state.width, height: this.state.height}}/>
-          </ResizableBox>
-
           <div >
+            <img src="http://lorempixel.com/50/50" onClick={() => this._addImage("http://lorempixel.com/50/50")}/>
+            <img src="http://lorempixel.com/60/60" onClick={() => this._addImage("http://lorempixel.com/50/50")}/>
+          </div>
+
+          <div className="resizable">
             <img src="http://lorempixel.com/50/50"/>
           </div>
         </div>
 
+        {/*start new container*/}
         <div className="container" id="widget">
           <div className="main-image-wrp">
 
@@ -41,24 +43,17 @@ class App extends Component {
               <div className="draggable-zone">
                 {
                   this.state.template.map((image, index) => (
-                    <Draggable key={index} bounds="parent">
-                      <div className='box'>
-                        {image}
-                      </div>
-                    </Draggable>
+                    <div className="resizable" key={index} style={{backgroundColor: 'blue'}}>
+                      {image}
+                    </div>
                   ))
                 }
               </div>
 
             </div>
-            <img src="http://lorempixel.com/400/400" className="main-image"/>
+            <img src="http://lorempixel.com/400/400"/>
           </div>
           <button onClick={this._saveImage}>Save</button>
-        </div>
-
-
-        <div classID="khatra">
-
         </div>
       </div>
 
@@ -83,6 +78,24 @@ class App extends Component {
         window.open(img);
       }
     });
+  }
+
+  _addImage = (imgSrc) => {
+    console.log(imgSrc)
+    this.state.template.push(<img src={imgSrc} className="resizable"/>);
+    this.setState({template: this.state.template}, () => {
+      $(".resizable").resizable();
+    });
+
+  }
+
+  _initializeData = () => {
+    // $(function () {
+    //   $("#resizable").resizable({
+    //     animate: true,
+    //     containment: "#resizable1"
+    //   });
+    // });
   }
 }
 
