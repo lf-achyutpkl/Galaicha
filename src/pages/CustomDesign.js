@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import Draggable from 'react-draggable';
-import {ResizableBox} from 'react-resizable';
 import Rnd from 'react-rnd';
 
 class App extends Component {

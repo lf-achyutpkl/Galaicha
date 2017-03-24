@@ -1,17 +1,8 @@
 import React, {Component} from 'react';
 import Rnd from 'react-rnd';
+import $ from 'jquery';
 
 export default class Page2 extends Component {
-
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			item: 'a'
-		}
-
-
-	}
 
 	componentDidMount() {
 		this.bringFront();
@@ -35,7 +26,7 @@ export default class Page2 extends Component {
 					  maxHeight={300}
 					  bounds={'parent'}
 					>
-					  <img src="/assets/images/bird1.png" style={{width: '100%', height: '100%'}} draggable="false"/>
+					  <img src="assets/images/bird1.png" style={{width: '100%', height: '100%'}} draggable="false"/>
 					</Rnd>
 
 					<Rnd
@@ -52,7 +43,7 @@ export default class Page2 extends Component {
 					  maxHeight={300}
 					  bounds={'parent'}
 					>
-					  <img src="/assets/images/mario.png" style={{width: '100%', height: '100%'}} draggable="false"/>
+					  <img src="assets/images/mario.png" style={{width: '100%', height: '100%'}} draggable="false"/>
 					</Rnd>
 
 					<Rnd
@@ -69,7 +60,7 @@ export default class Page2 extends Component {
 					  maxHeight={300}
 					  bounds={'parent'}
 					>
-					  <img src="/assets/images/bird2.png" style={{width: '100%', height: '100%'}} draggable="false"/>
+					  <img src="assets/images/bird2.png" style={{width: '100%', height: '100%'}} draggable="false"/>
 					</Rnd>
 				</div>
 				<button onClick={this._saveImage}>Save</button>

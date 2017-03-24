@@ -31,8 +31,6 @@
     "jquery-ui": "^1.12.1",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
-    "react-draggable": "^2.2.3",
-    "react-resizable": "^1.6.0",
     "react-rnd": "^4.2.2"
   }
 }
