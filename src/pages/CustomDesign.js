@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Draggable from 'react-draggable';
 import {ResizableBox} from 'react-resizable';
+import Rnd from 'react-rnd';
 
 class App extends Component {
 
@@ -16,9 +17,6 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    $(".resizable").resizable();
-  }
 
   render() {
     return (
@@ -43,18 +41,23 @@ class App extends Component {
               <div className="draggable-zone">
                 {
                   this.state.template.map((image, index) => (
-                    <div className="resizable" key={index} style={{backgroundColor: 'blue'}}>
-                      {image}
-                    </div>
+                    <Rnd
+                      style={{width: '30px', height: '40px', background: 'red'}}
+                    >
+                      <img src="http://lorempixel.com/400/400" style={{width: '30px', height: '40px'}}/>
+                    </Rnd>
                   ))
                 }
               </div>
 
             </div>
-            <img src="http://lorempixel.com/400/400"/>
+            <img src="http://lorempixel.com/400/400" draggable="true"/>
           </div>
           <button onClick={this._saveImage}>Save</button>
         </div>
+      
+
+
       </div>
 
     )
@@ -83,9 +86,7 @@ class App extends Component {
   _addImage = (imgSrc) => {
     console.log(imgSrc)
     this.state.template.push(<img src={imgSrc} className="resizable"/>);
-    this.setState({template: this.state.template}, () => {
-      $(".resizable").resizable();
-    });
+    this.setState({template: this.state.template});
 
   }
 

@@ -52,3 +52,12 @@
     cursor: se-resize;
     z-index: 100;
 }
+
+.selected {
+    border: 1px solid red;
+}
+
+
+
+
+
