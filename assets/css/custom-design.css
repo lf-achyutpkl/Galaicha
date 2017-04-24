@@ -1,10 +1,10 @@
-.container {
-    width: 50%;
-    float: left;
-    min-height: 500px;
-    border: 3px solid brown;
-    background-color: #afd9ee;
-}
+/*.container {*/
+/*width: 50%;*/
+/*float: left;*/
+/*min-height: 500px;*/
+/*border: 3px solid brown;*/
+/*background-color: #afd9ee;*/
+/*}*/
 
 .main-image-wrp {
     width: 400px;
@@ -54,8 +54,71 @@
 }
 
 .selected {
-    border: 1px solid red;
+    border: 3px solid white;
 }
+
+/*actual design css*/
+.design-page {
+    margin: 0 auto;
+    /*width: 56em;*/
+    /*max-width: 120em;*/
+}
+
+.workspace-wrp {
+    /*margin: 0 auto;*/
+    /*width: 100%;*/
+}
+
+.option-container {
+    background: navajowhite;
+    width: 40%;
+    height: 500px;
+    float: left;
+}
+
+.canvas-container {
+    background: cornflowerblue;
+    width: 60%;
+    height: 500px;
+    float: left;
+}
+
+.canvas-wrp {
+    width: 90%;
+    height: 65%;
+    background: #fff;
+    margin: 20px auto;
+    position: relative;
+}
+
+.canvas {
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../images/galaicha.jpg");
+}
+
+.valid-area {
+    top: 10px;
+    left: 50px;
+    width: 510px;
+    height: 300px;
+    border: 1px solid gray;
+    position: absolute;
+}
+
+.close-btn {
+    display: none;
+}
+
+.selected .close-btn {
+    display: block;
+    top: -15px;
+    left: -15px;
+    cursor: crosshair;
+    position: absolute;
+}
+
 
 
 

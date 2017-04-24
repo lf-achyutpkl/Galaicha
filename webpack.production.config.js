@@ -18,6 +18,12 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jquery: "jquery",
+      "window.jQuery": "jquery",
+      jQuery: "jquery"
+    }),
     new ExtractTextPlugin("bundle.css"),
     new webpack.optimize.UglifyJsPlugin()
   ]
