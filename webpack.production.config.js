@@ -14,6 +14,7 @@ module.exports = {
     loaders: [
       {test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader")},
       {test: /\.js$/, exclude: /node_modules/, loaders: ["react-hot", "babel-loader"]},
+      {test: /\.(jpg|png)$/, loader: 'file-loader', query: {name: 'img/[name].[ext]'}},
       {test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/, loader: 'file-loader', query: {name: 'fonts/[name].[ext]'}},
     ]
   },
