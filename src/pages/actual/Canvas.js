@@ -11,7 +11,8 @@ const Canvas = ({images, backgroundImage, designUrl}) => {
         }
       </div>
       <div className="design-wrp">
-        { designUrl && <img src={designUrl} width="510px" height="305px"/>}
+        { designUrl &&
+        <img src={designUrl} width="510px" height="305px" style={{'userSelect': 'none'}} draggable="false"/>}
       </div>
     </div>
   )

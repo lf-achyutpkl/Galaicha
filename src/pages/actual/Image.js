@@ -20,8 +20,10 @@ const Image = ({imageUrl}) => (
       x: 0,
       y: 0,
       width: 100,
-      height: 100,
+      height: 100
     }}
+    minHeight={20}
+    minWidth={20}
     maxWidth={300}
     maxHeight={300}
     bounds={'parent'}
