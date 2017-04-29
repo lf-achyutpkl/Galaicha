@@ -2,12 +2,12 @@ import React, {PropTypes} from 'react';
 
 import Image from './Image';
 
-const Canvas = ({images, backgroundImage, designUrl}) => {
+const Canvas = ({images, backgroundImage, designUrl, removeArtImage}) => {
   return (
     <div className="canvas" style={{backgroundImage: `url(${backgroundImage})`}}>
       <div className="valid-area">
         {
-          images && images.map((image, index) => <Image imageUrl={image} key={index}/>)
+          images && images.map((image, index) => <Image imageUrl={image} key={index} removeArtImage={removeArtImage}/>)
         }
       </div>
       <div className="design-wrp">

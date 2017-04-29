@@ -8,8 +8,8 @@ class Options extends Component {
 
     this.state = {
       colorSwatches: ['assets/images/red-galaicha.jpg', 'assets/images/green-galaicha.jpg', 'assets/images/navy-galaicha.jpg', 'assets/images/blue-galaicha.jpg'],
-      designs: ['assets/images/design1.png', 'assets/images/design2.png', 'assets/images/design3.png', 'assets/images/design4.png', 'assets/images/design5.png'],
-      arts: ['assets/images/art1.png', 'assets/images/mario.png']
+      designs: ['assets/images/design1.png', 'assets/images/design2.png', 'assets/images/design3.png', 'assets/images/design4.png', 'assets/images/design5.png', ''],
+      arts: ['assets/images/mandala.png', 'assets/images/map-of-nepal.png', 'assets/images/tiger.png', 'assets/images/tiger2.png', 'assets/images/tiger3.png']
 
     }
   }
@@ -43,7 +43,8 @@ class Options extends Component {
             <div style={{padding: 20}}>
               {
                 this.state.designs && this.state.designs.map((designUrl, index) => (
-                  <img src={designUrl} width="100px" height="100px" style={{float: 'left'}} key={index}
+                  <img src={designUrl} width="100px" height="100px"
+                       style={{float: 'left', border: '1px solid black', margin: '5px'}} key={index}
                        onClick={() => this.props.onDesignSelect(designUrl)}/>
                 ))
               }
@@ -53,7 +54,8 @@ class Options extends Component {
             <div style={{padding: 20}}>
               {
                 this.state.arts && this.state.arts.map((artsUrl, index) => (
-                  <img src={artsUrl} width="150px" height="150px" style={{float: 'left'}} key={index}
+                  <img src={artsUrl} width="100px" height="100px"
+                       style={{float: 'left', border: '1px solid black', margin: '5px'}} key={index}
                        onClick={() => this.props.onArtImageSelect(artsUrl)}/>
                 ))
               }

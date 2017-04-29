@@ -14,7 +14,7 @@ const Enable = {
   topRight: false
 };
 
-const Image = ({imageUrl}) => (
+const Image = ({imageUrl, removeArtImage}) => (
   <Rnd
     initial={{
       x: 0,
@@ -22,15 +22,17 @@ const Image = ({imageUrl}) => (
       width: 100,
       height: 100
     }}
-    minHeight={20}
-    minWidth={20}
+    minHeight={30}
+    minWidth={30}
     maxWidth={300}
     maxHeight={300}
     bounds={'parent'}
     lockAspectRatio
   >
-    <div className="close-btn">
-      <img src={closeBtn} alt="Click to remove image" style={{width: '30px', height: '30px'}}/>
+    <div className="close-btn" onClick={() => {
+      alert('asdf')
+    }}>
+      <img src={closeBtn} style={{width: '30px', height: '30px'}}/>
     </div>
     <img src={imageUrl} style={{width: '100%', height: '100%', 'userSelect': 'none'}} draggable="false"/>
   </Rnd>

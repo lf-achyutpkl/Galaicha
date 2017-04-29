@@ -35,6 +35,7 @@ class DesignMain extends Component {
               <Canvas
                 images={this.state.artImages}
                 designUrl={this.state.designImage}
+                removeArtImage={this._removeArtImage}
                 backgroundImage={this.state.backgroundImage}
               />
             </div>
@@ -45,19 +46,14 @@ class DesignMain extends Component {
   }
 
   _bringFront = () => {
-    // $('.react-draggable').on('click', function () {
-    //   $('.selected').removeClass('selected');
-    //   $('.selected').removeClass('closeBtn');
-    //   $(this).addClass('selected');
-    //   $(this).addClass('closeBtn');
-    //   $(this).appendTo('.valid-area');
-    // });
     $(document.body).on('click', '.react-draggable', function () {
       $('.selected').removeClass('selected');
-      $('.selected').removeClass('closeBtn');
       $(this).addClass('selected');
-      $(this).addClass('closeBtn');
       $(this).appendTo('.valid-area');
+    });
+
+    $(document.body).on('click', '.design-wrp', function () {
+      $('.selected').removeClass('selected');
     });
   }
 
@@ -72,6 +68,11 @@ class DesignMain extends Component {
   _addArtImage = (imageUrl) => {
     let listOfArtImages = this.state.artImages.concat(imageUrl);
     this.setState({artImages: listOfArtImages});
+  }
+
+  _removeArtImage = (imageUrl) => {
+    let updatedArtList = this.state.artImages.filter(artImageUrl => (artImageUrl !== imageUrl));
+    this.setState({artImages: updatedArtList});
   }
 }
 
