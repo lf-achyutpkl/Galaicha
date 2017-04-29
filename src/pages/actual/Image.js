@@ -3,13 +3,24 @@ import Rnd from 'react-rnd';
 
 import closeBtn from '../../../assets/images/close-btn.png';
 
+const Enable = {
+  bottom: false,
+  bottomLeft: false,
+  bottomRight: true,
+  left: false,
+  right: false,
+  top: false,
+  topLeft: false,
+  topRight: false
+};
+
 const Image = ({imageUrl}) => (
   <Rnd
     initial={{
       x: 0,
       y: 0,
-      width: 150,
-      height: 150,
+      width: 100,
+      height: 100,
     }}
     maxWidth={300}
     maxHeight={300}

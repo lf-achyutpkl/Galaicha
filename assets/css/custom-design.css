@@ -85,7 +85,7 @@
 
 .canvas-wrp {
     width: 90%;
-    height: 65%;
+    height: 62%;
     background: #fff;
     margin: 20px auto;
     position: relative;
@@ -95,15 +95,23 @@
     height: 100%;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url("../images/galaicha.jpg");
+    /*background-image: url("../images/galaicha.jpg");*/
 }
 
 .valid-area {
-    top: 10px;
+    /*top: 10px;*/
     left: 50px;
     width: 510px;
-    height: 300px;
-    border: 1px solid gray;
+    height: 310px;
+    border: 2px dashed #fff;
+    position: absolute;
+}
+
+.design-wrp {
+    left: 50px;
+    width: 510px;
+    height: 310px;
+    border: 2px dashed #fff;
     position: absolute;
 }
 

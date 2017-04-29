@@ -9,7 +9,9 @@ class DesignMain extends Component {
     super();
 
     this.state = {
-      images: ['assets/images/mario.png', 'assets/images/bird1.png']
+      artImages: [],
+      designImage: '',
+      backgroundImage: 'assets/images/red-galaicha.jpg'
     }
   }
 
@@ -22,11 +24,19 @@ class DesignMain extends Component {
       <div className="container">
         <div className="workspace-wrp">
           <div className="option-container">
-            <Options/>
+            <Options
+              onDesignSelect={this._addDesignOnCanvas}
+              onBackgroundSelect={this._changeCanvasBackground}
+              onArtImageSelect={this._addArtImage}
+            />
           </div>
           <div className="canvas-container">
             <div className="canvas-wrp">
-              <Canvas images={this.state.images}/>
+              <Canvas
+                images={this.state.artImages}
+                designUrl={this.state.designImage}
+                backgroundImage={this.state.backgroundImage}
+              />
             </div>
           </div>
         </div>
@@ -35,13 +45,33 @@ class DesignMain extends Component {
   }
 
   _bringFront = () => {
-    $('.react-draggable').on('click', function () {
+    // $('.react-draggable').on('click', function () {
+    //   $('.selected').removeClass('selected');
+    //   $('.selected').removeClass('closeBtn');
+    //   $(this).addClass('selected');
+    //   $(this).addClass('closeBtn');
+    //   $(this).appendTo('.valid-area');
+    // });
+    $(document.body).on('click', '.react-draggable', function () {
       $('.selected').removeClass('selected');
       $('.selected').removeClass('closeBtn');
       $(this).addClass('selected');
       $(this).addClass('closeBtn');
       $(this).appendTo('.valid-area');
     });
+  }
+
+  _addDesignOnCanvas = (designUrl) => {
+    this.setState({designImage: designUrl})
+  }
+
+  _changeCanvasBackground = (imageUrl) => {
+    this.setState({backgroundImage: imageUrl});
+  }
+
+  _addArtImage = (imageUrl) => {
+    let listOfArtImages = this.state.artImages.concat(imageUrl);
+    this.setState({artImages: listOfArtImages});
   }
 }
 
