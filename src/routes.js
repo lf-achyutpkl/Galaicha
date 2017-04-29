@@ -13,7 +13,7 @@ let routes = (
       <Route path={'/custom-design'} component={CustomDesign}></Route>
       <Route path={'/page2'} component={Page2}></Route>
       <Route path={'/design'} component={DesignMain}></Route>
-      <Route path="*" component={CustomDesign}></Route>
+      <Route path="*" component={DesignMain}></Route>
     </Route>
   </Router>
 );
