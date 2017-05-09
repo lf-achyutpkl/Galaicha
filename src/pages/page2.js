@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Rnd from 'react-rnd';
+import html2canvas from 'html2canvas';
 
 export default class Page2 extends Component {
 

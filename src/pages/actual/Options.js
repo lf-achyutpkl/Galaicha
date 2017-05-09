@@ -37,6 +37,7 @@ class Options extends Component {
                        onClick={() => this.props.onBackgroundSelect(imageUrl)}/>
                 ))
               }
+              <button onClick={() => this.props.saveDesign()}>Save</button>
             </div>
           </div>
           <div role="tabpanel" className="tab-pane" id="add-design">

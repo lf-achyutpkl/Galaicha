@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import html2canvas from 'html2canvas';
 
 import Options from './Options';
 import Canvas from './Canvas';
@@ -28,6 +29,7 @@ class DesignMain extends Component {
               onDesignSelect={this._addDesignOnCanvas}
               onBackgroundSelect={this._changeCanvasBackground}
               onArtImageSelect={this._addArtImage}
+              saveDesign={this._saveDesign}
             />
           </div>
           <div className="canvas-container">
@@ -78,6 +80,19 @@ class DesignMain extends Component {
   _removeArtImage = (imageUrl) => {
     let updatedArtList = this.state.artImages.filter(artImageUrl => (artImageUrl !== imageUrl));
     this.setState({artImages: updatedArtList});
+  }
+
+  _saveDesign = () => {
+    $('.selected .close-btn').css('display', 'none');
+    $('.selected').removeClass('selected');
+
+    html2canvas($(".canvas"), {
+      useCORS: true,
+      onrendered: function (canvas) {
+        var img = canvas.toDataURL()
+        window.open(img);
+      }
+    });
   }
 }
 
