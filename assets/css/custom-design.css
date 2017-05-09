@@ -94,8 +94,9 @@
     left: 50px;
     width: 510px;
     height: 309px;
-    border: 2px dashed #fff;
     position: absolute;
+    border-width: 2px;
+    border-style: dashed;
 }
 
 .design-wrp {

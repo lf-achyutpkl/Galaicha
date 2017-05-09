@@ -12,6 +12,7 @@ class DesignMain extends Component {
     this.state = {
       artImages: [],
       designImage: '',
+      isBorderLineVisible: false,
       backgroundImage: 'assets/images/red-galaicha.jpg'
     }
   }
@@ -38,7 +39,9 @@ class DesignMain extends Component {
                 images={this.state.artImages}
                 designUrl={this.state.designImage}
                 removeArtImage={this._removeArtImage}
+                toggleBorderLine={this._toggleBorderLine}
                 backgroundImage={this.state.backgroundImage}
+                isBorderLineVisible={this.state.isBorderLineVisible}
               />
             </div>
           </div>
@@ -62,25 +65,25 @@ class DesignMain extends Component {
       $('.selected .close-btn').css('display', 'none');         // Hide remove button
       $('.selected').removeClass('selected');                   // Remove selected class
     });
-  }
+  };
 
   _addDesignOnCanvas = (designUrl) => {
     this.setState({designImage: designUrl})
-  }
+  };
 
   _changeCanvasBackground = (imageUrl) => {
     this.setState({backgroundImage: imageUrl});
-  }
+  };
 
   _addArtImage = (imageUrl) => {
     let listOfArtImages = this.state.artImages.concat(imageUrl);
     this.setState({artImages: listOfArtImages});
-  }
+  };
 
   _removeArtImage = (imageUrl) => {
     let updatedArtList = this.state.artImages.filter(artImageUrl => (artImageUrl !== imageUrl));
     this.setState({artImages: updatedArtList});
-  }
+  };
 
   _saveDesign = () => {
     $('.selected .close-btn').css('display', 'none');
@@ -92,6 +95,12 @@ class DesignMain extends Component {
         var img = canvas.toDataURL()
         window.open(img);
       }
+    });
+  };
+
+  _toggleBorderLine = () => {
+    this.setState({
+      isBorderLineVisible: !this.state.isBorderLineVisible
     });
   }
 }

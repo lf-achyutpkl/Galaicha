@@ -3,18 +3,7 @@ import Rnd from 'react-rnd';
 
 import closeBtn from '../../../assets/images/close-btn.png';
 
-const Enable = {
-  bottom: false,
-  bottomLeft: false,
-  bottomRight: true,
-  left: false,
-  right: false,
-  top: false,
-  topLeft: false,
-  topRight: false
-};
-
-const Image = ({imageUrl, removeArtImage}) => (
+const Image = ({imageUrl, removeArtImage, toggleBorderLine}) => (
   <Rnd
     initial={{
       x: 0,
@@ -28,6 +17,10 @@ const Image = ({imageUrl, removeArtImage}) => (
     maxHeight={300}
     bounds={'parent'}
     lockAspectRatio
+    onDragStop={() => toggleBorderLine()}
+    onDragStart={() => toggleBorderLine()}
+    onResizeStop={() => toggleBorderLine()}
+    onResizeStart={() => toggleBorderLine()}
   >
     <div className="close-btn" onClick={() => {
       removeArtImage(imageUrl)
