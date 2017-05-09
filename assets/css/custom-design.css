@@ -114,14 +114,22 @@
     position: absolute;
 }
 
-.close-btn {
-    display: none;
-}
+/*.close-btn {*/
+/*display: none;*/
+/*}*/
 
-.selected .close-btn {
+/*.selected .close-btn {*/
+/*top: -30px;*/
+/*left: -30px;*/
+/*display: block;*/
+/*cursor: pointer;*/
+/*position: absolute;*/
+/*}*/
+
+.close-btn {
     top: -30px;
     left: -30px;
-    display: block;
+    display: none;
     cursor: pointer;
     position: absolute;
 }

@@ -47,13 +47,18 @@ class DesignMain extends Component {
 
   _bringFront = () => {
     $(document.body).on('click', '.react-draggable', function () {
-      $('.selected').removeClass('selected');
-      $(this).addClass('selected');
-      $(this).appendTo('.valid-area');
+      $('.selected .close-btn').css('display', 'none');   // Hide previous remove button
+      $('.selected').removeClass('selected');             // Remove previous selected class
+      $(this).addClass('selected');                       // Add selected class to current art
+
+      $('.selected .close-btn').css('display', 'block');  // Display remove button to selected art
+
+      $(this).appendTo('.valid-area');                    // Bring selected art to top
     });
 
-    $(document.body).on('click', '.design-wrp', function () {
-      $('.selected').removeClass('selected');
+    $(document.body).on('click', '.design-wrp', function () {   // Handle when user click on valid area other than art
+      $('.selected .close-btn').css('display', 'none');         // Hide remove button
+      $('.selected').removeClass('selected');                   // Remove selected class
     });
   }
 

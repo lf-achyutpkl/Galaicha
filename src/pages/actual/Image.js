@@ -30,7 +30,7 @@ const Image = ({imageUrl, removeArtImage}) => (
     lockAspectRatio
   >
     <div className="close-btn" onClick={() => {
-      alert('asdf')
+      removeArtImage(imageUrl)
     }}>
       <img src={closeBtn} style={{width: '30px', height: '30px'}}/>
     </div>

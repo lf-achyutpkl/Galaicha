@@ -8,7 +8,7 @@ class Options extends Component {
 
     this.state = {
       colorSwatches: ['assets/images/red-galaicha.jpg', 'assets/images/green-galaicha.jpg', 'assets/images/navy-galaicha.jpg', 'assets/images/blue-galaicha.jpg'],
-      designs: ['assets/images/design1.png', 'assets/images/design2.png', 'assets/images/design3.png', 'assets/images/design4.png', 'assets/images/design5.png', ''],
+      designs: ['', 'assets/images/design1.png', 'assets/images/design2.png', 'assets/images/design3.png', 'assets/images/design4.png', 'assets/images/design5.png'],
       arts: ['assets/images/mandala.png', 'assets/images/map-of-nepal.png', 'assets/images/tiger.png', 'assets/images/tiger2.png', 'assets/images/tiger3.png']
 
     }
